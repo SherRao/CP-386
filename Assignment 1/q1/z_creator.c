@@ -1,6 +1,6 @@
 /*
  -------------------------------------
- File:    process_managment.c
+ File:    z_creator.c
  Project: 190906250_190765210_a01_q01
  -------------------------------------
  Author:  Nausher Rao & Declan Hollingworth
@@ -13,10 +13,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <unistd.h>
 
-int main()
-{
+int main() {
+    // Forks the parent process.
+    pid_t pid = fork();
+
+    // Child process
+    if (pid == 0) {
+        exit(0);
+    }
+
+    // Parent process
+    else if (pid > 0) {
+        sleep(100);
+
+    } else {
+        return -1;
+    }
+
+    return 0;
 }

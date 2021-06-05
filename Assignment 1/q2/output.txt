@@ -1,0 +1,37 @@
+The output of: free -h : is
+>>>>>>>>>>>>>>>
+              total        used        free      shared  buff/cache   available
+Mem:           31Gi        18Gi        13Gi        17Mi       223Mi        13Gi
+Swap:          58Gi       1.9Gi        56Gi
+<<<<<<<<<<<<<<<
+
+The output of: ls -l -a -F : is
+>>>>>>>>>>>>>>>
+total 60
+drwxrwxrwx 1 sherrao sherrao  4096 Jun  4 20:29 ./
+drwxrwxrwx 1 sherrao sherrao  4096 Jun  4 20:17 ../
+-rwxrwxrwx 1 sherrao sherrao   659 Jun  4 15:33 Makefile*
+-rwxrwxrwx 1 sherrao sherrao 23680 Jun  4 20:29 main.exe*
+-rwxrwxrwx 1 sherrao sherrao  9647 Jun  4 20:29 process_managment.c*
+-rwxrwxrwx 1 sherrao sherrao  2549 Jun  4 20:29 process_managment.h*
+-rwxrwxrwx 1 sherrao sherrao  9083 Jun  4 20:11 process_managment_old.c*
+-rwxrwxrwx 1 sherrao sherrao  1052 Jun  4 20:11 process_managment_old.h*
+-rwxrwxrwx 1 sherrao sherrao    44 Jun  2 14:42 sample_in.txt*
+<<<<<<<<<<<<<<<
+
+The output of: whoami : is
+>>>>>>>>>>>>>>>
+sherrao
+<<<<<<<<<<<<<<<
+
+The output of: uptime -p : is
+>>>>>>>>>>>>>>>
+up 2 weeks, 3 days, 6 hours, 9 minutes
+<<<<<<<<<<<<<<<
+
+The output of: pwd : is
+>>>>>>>>>>>>>>>
+/mnt/x/Code/Repos/CP-386/Assignment 1/q2
+<<<<<<<<<<<<<<<
+
+
