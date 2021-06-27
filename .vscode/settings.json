@@ -1,5 +1,21 @@
 {
     "files.associations": {
-        "process_managment.h": "c"
+        "*.json": "jsonc",
+        "process_managment.h": "c",
+        "string.h": "c",
+        "wait.h": "c",
+        "unistd.h": "c",
+        "*.tcc": "c",
+        "cmath": "c",
+        "type_traits": "c",
+        "typeinfo": "c",
+        "q1.h": "c",
+        "pthread.h": "c",
+        "stdio.h": "c",
+        "stdlib.h": "c",
+        "q3.h": "c",
+        "time.h": "c",
+        "stdbool.h": "c",
+        "q2.h": "c"
     }
 }

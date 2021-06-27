@@ -1,0 +1,51 @@
+The output of: free -h : is
+>>>>>>>>>>>>>>>
+              total        used        free      shared  buff/cache   available
+Mem:           31Gi        15Gi        16Gi        17Mi       223Mi        16Gi
+Swap:          58Gi       1.1Gi        56Gi
+<<<<<<<<<<<<<<<
+
+The output of: ls -l -a -F : is
+>>>>>>>>>>>>>>>
+total 120
+drwxrwxrwx 1 sherrao sherrao  4096 Jun  5 20:24 ./
+drwxrwxrwx 1 sherrao sherrao  4096 Jun  5 14:34 ../
+-rwxrwxrwx 1 sherrao sherrao   759 Jun  5 20:07 190906250_190765210_a01_q11.c.txt*
+-rwxrwxrwx 1 sherrao sherrao   943 Jun  5 20:06 190906250_190765210_a01_q12.c.txt*
+-rwxrwxrwx 1 sherrao sherrao  9634 Jun  5 20:07 190906250_190765210_a02_q11.c.txt*
+-rwxrwxrwx 1 sherrao sherrao  2598 Jun  5 20:07 190906250_190765210_a02_q11.h.txt*
+-rwxrwxrwx 1 sherrao sherrao   659 Jun  4 15:33 Makefile*
+-rwxrwxrwx 1 sherrao sherrao  1606 Jun  5 15:04 output.txt*
+-rwxrwxrwx 1 sherrao sherrao 23776 Jun  5 20:24 process_management*
+-rwxrwxrwx 1 sherrao sherrao  9625 Jun  5 20:24 process_management.c*
+-rwxrwxrwx 1 sherrao sherrao  2598 Jun  5 20:07 process_management.h*
+-rwxrwxrwx 1 sherrao sherrao    53 Jun  5 15:04 sample_in.txt*
+-rwxrwxrwx 1 sherrao sherrao 19664 Jun  5 20:24 z_creator*
+-rwxrwxrwx 1 sherrao sherrao   759 Jun  5 20:07 z_creator.c*
+-rwxrwxrwx 1 sherrao sherrao 19560 Jun  5 20:24 z_terminator*
+-rwxrwxrwx 1 sherrao sherrao   943 Jun  5 20:06 z_terminator.c*
+<<<<<<<<<<<<<<<
+
+The output of: whoami : is
+>>>>>>>>>>>>>>>
+sherrao
+<<<<<<<<<<<<<<<
+
+The output of: uptime -p : is
+>>>>>>>>>>>>>>>
+up 2 weeks, 4 days, 6 hours, 4 minutes
+<<<<<<<<<<<<<<<
+
+The output of: pwd : is
+>>>>>>>>>>>>>>>
+/mnt/x/Code/Repos/cp-386/Assignment 1/final
+<<<<<<<<<<<<<<<
+
+The output of: free -h : is
+>>>>>>>>>>>>>>>
+              total        used        free      shared  buff/cache   available
+Mem:           31Gi        15Gi        16Gi        17Mi       223Mi        16Gi
+Swap:          58Gi       1.1Gi        56Gi
+<<<<<<<<<<<<<<<
+
+

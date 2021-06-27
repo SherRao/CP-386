@@ -10,7 +10,7 @@
  -------------------------------------
  */
 
-#include "process_managment.h"
+#include "process_management.h"
 
 /**
  *
@@ -19,17 +19,18 @@
  */
 int main(int argument_count, char *arguments[]) {
     if (argument_count > 1) {
+        char *fileName = arguments[ARGUMENT_POSITION];
+
         int memory_id = get_new_memory_id();
         char *memory_pointer = get_memory_pointer(memory_id);
 
-        char *fileName = arguments[ARGUMENT_POSITION];
         write_file_to_memory(memory_pointer, fileName, strlen(fileName));
         exec_commands_from_memory(memory_pointer);
         close_memory(memory_pointer, memory_id);
     }
 
     else {
-        printf("\nmain: No file given!\n");
+        printf("\nNo file provided!\n");
         exit(-1);
     }
 }
@@ -83,10 +84,12 @@ void write_file_to_memory(char *memory_pointer, char *fileName, int length) {
 
     // Child process
     if (pid == 0) {
-        // int shared_mem_id = get_writeable_memory_id();
-        // char *memory_pointer = get_writeable_memory_pointer(shared_mem_id);
-
         FILE *file = fopen(fileName, "r");
+        if (file == NULL) {
+            printf("\nwrite_file_to_memory: Invalid file!\n");
+            exit(-1);
+        }
+
         char *line = NULL;
         size_t len = 0;
         ssize_t read;
@@ -96,7 +99,6 @@ void write_file_to_memory(char *memory_pointer, char *fileName, int length) {
             pointer += sprintf(pointer, "%s", line);
         }
 
-        // close_writeable_memory(memory_pointer, shared_mem_id);
         exit(0);
     }
 
@@ -105,11 +107,9 @@ void write_file_to_memory(char *memory_pointer, char *fileName, int length) {
         int status;
         wait(&status);
         if (WEXITSTATUS(status) == -1) {
-            perror("\nwrite_file_to_memory: Error while waiting\n");
+            perror("\nwrite_file_to_memory: Error while waiting!\n");
             exit(-1);
         }
-
-        printf("\nwrite_file_to_memory: Done waitin\n");
     }
 
     else {
@@ -208,7 +208,9 @@ void write_command_output_to_pipe(char *pointer, int pipe_id) {
 /**
  * 
  * Takes the bytes currently in the FIFO named pipe and writes it 
- * to a file.
+ * to a file. As the lines are split by newline characters, 
+ * the '@' symbol is used when a newline character is needed in the 
+ * output.
  * 
  */
 void pipe_to_file(int pipe_id) {
@@ -233,13 +235,13 @@ void pipe_to_file(int pipe_id) {
  * 
  */
 void close_memory(char *memory_pointer, int memory_id) {
-    // remove the mapped memory segment from the address space of the process
+    // remove the mapping of the shared memory segment from the process.
     if (munmap(memory_pointer, SHARED_MEMORY_SIZE) == -1) {
         printf("\nclose_writeable_memory: Unmap failed: %s\n", strerror(errno));
         exit(-1);
     }
 
-    // close the shared memory segment as if it was a file
+    // close the memory segment file.
     if (close(memory_id) == -1) {
         printf("\nclose_writeable_memory: Close failed: %s\n", strerror(errno));
         exit(-1);
