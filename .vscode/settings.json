@@ -16,6 +16,8 @@
         "q3.h": "c",
         "time.h": "c",
         "stdbool.h": "c",
-        "q2.h": "c"
+        "q2.h": "c",
+        "semaphore.h": "c",
+        "features.h": "c"
     }
 }
